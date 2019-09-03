@@ -2,9 +2,11 @@
 
 source "https://rubygems.org"
 
-branch = 'master'
+solidus_branch = ENV.fetch("SOLIDUS_BRANCH", "master")
+
 gem 'avatax-ruby'
-gem "solidus", github: "solidusio/solidus", branch: branch
+
+gem "solidus", github: "solidusio/solidus", branch: solidus_branch
 gem "solidus_auth_devise", github: "solidusio/solidus_auth_devise"
 
 group :test do
